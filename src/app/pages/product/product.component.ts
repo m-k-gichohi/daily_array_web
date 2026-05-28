@@ -55,7 +55,7 @@ import { SupabaseService } from '../../services/supabase.service';
           <div class="row g-5 align-items-start">
 
             <!-- LEFT — IMAGE -->
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <div class="tda-product-img-wrap">
                 <img
                   [src]="product()!.image_url || 'assets/placeholder.jpg'"
@@ -67,10 +67,19 @@ import { SupabaseService } from '../../services/supabase.service';
                   <span class="tda-product-cat-badge">{{ product()!.category!.name }}</span>
                 }
               </div>
+
+                 <!-- Description -->
+              @if (product()!.description) {
+                <div class="mb-4">
+                  <p class="tda-features-label mb-2">Why this one</p>
+                  <!-- <p class="tda-body-text">{{ product()!.description }}</p> -->
+                  <div [innerHtml]=product()!.description></div>
+                </div>
+              }
             </div>
 
             <!-- RIGHT — DETAILS -->
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <p class="tda-eyebrow mb-2">{{ product()!.category?.name }}</p>
               <h1 class="tda-display-title mb-3">{{ product()!.name }}</h1>
               <p class="tda-tagline mb-4">{{ product()!.tagline }}</p>
@@ -127,13 +136,7 @@ import { SupabaseService } from '../../services/supabase.service';
                 </div>
               }
 
-              <!-- Description -->
-              @if (product()!.description) {
-                <div class="mb-4">
-                  <p class="tda-features-label mb-2">Why this one</p>
-                  <p class="tda-body-text">{{ product()!.description }}</p>
-                </div>
-              }
+           
 
               <!-- Why we love it / Best for -->
               @if (product()!.why_we_love_it || product()!.best_for) {
