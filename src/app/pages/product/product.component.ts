@@ -70,7 +70,7 @@ import { SupabaseService } from '../../services/supabase.service';
 
                  <!-- Description -->
               @if (product()!.description) {
-                <div class="mb-4">
+                <div class="mb-4 mt-10">
                   <p class="tda-features-label mb-2">Why this one</p>
                   <!-- <p class="tda-body-text">{{ product()!.description }}</p> -->
                   <div [innerHtml]=product()!.description></div>

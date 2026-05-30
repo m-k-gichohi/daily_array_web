@@ -1,3 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+
+.tda-product-description .lead {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.85;
+}
+
+.tda-content-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f0ead8;
+  padding-bottom: 0.5rem;
+}
+
+.tda-blockquote {
+  border-left: 3px solid #b5832a;
+  padding: 1rem 0 1rem 1.5rem;
+  background: #fdf8ef;
+}
+
+.tda-blockquote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1a1a1a;
+  line-height: 1.65;
+}
+
+.tda-sleeper-card {
+  background: #fdf8ef;
+  border: 1px solid #f0ead8;
+  border-radius: 4px;
+}
+
+.tda-sleeper-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b5832a;
+}
+
+.tda-sleeper-tip {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.tda-cert-card {
+  border: 1px solid #f0ead8;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.tda-cert-icon {
+  width: 36px;
+  height: 36px;
+  background: #fdf8ef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b5832a;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tda-cert-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.tda-cert-body {
+  font-size: 0.8125rem;
+  color: #666;
+  line-height: 1.6;
+}

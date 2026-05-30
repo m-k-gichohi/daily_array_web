@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
               mattress toppers, bedding and bedroom essentials curated to help you
               sleep deeper and wake up better.
             </p>
-            <div class="d-flex gap-3 mt-3">
+            <!-- <div class="d-flex gap-3 mt-3">
               <a href="https://pinterest.com/TheDailyArray" target="_blank" rel="noopener" class="tda-social-link">
                 <i class="bi bi-pinterest"></i>
               </a>
@@ -31,7 +31,7 @@ import { RouterLink } from '@angular/router';
               <a href="#" target="_blank" rel="noopener" class="tda-social-link">
                 <i class="bi bi-instagram"></i>
               </a>
-            </div>
+            </div> -->
           </div>
 
           <!-- Collections -->
@@ -50,8 +50,8 @@ import { RouterLink } from '@angular/router';
             <p class="tda-footer-heading">Follow Us</p>
             <ul class="list-unstyled tda-footer-links">
               <li><a href="https://pinterest.com/TheDailyArray" target="_blank" rel="noopener">Pinterest</a></li>
-              <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
-              <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+              <!-- <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Instagram</a></li> -->
             </ul>
           </div>
 
