@@ -43,22 +43,7 @@ create table if not exists products (
   updated_at    timestamptz default now()
 );
 
--- ── PRODUCT SPECS ──
-create table if not exists product_specs (
-  id            uuid primary key default uuid_generate_v4(),
-  product_id    uuid references products(id) on delete cascade,
-  label         text not null,
-  value         text not null,
-  display_order int default 0
-);
 
--- ── PRODUCT FEATURES ──
-create table if not exists product_features (
-  id            uuid primary key default uuid_generate_v4(),
-  product_id    uuid references products(id) on delete cascade,
-  feature       text not null,
-  display_order int default 0
-);
 
 -- ── RELATED PRODUCTS ──
 create table if not exists related_products (
@@ -246,57 +231,6 @@ select
   1
 from categories c where c.slug = 'budget-upgrades';
 
--- ════════════════════════════════════════════════
--- SEED DATA — PRODUCT SPECS
--- ════════════════════════════════════════════════
-insert into product_specs (product_id, label, value, display_order)
-select p.id, 'Material', 'Gel Memory Foam', 1 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Thickness', '3 inches', 2 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Rating', '★★★★★ 4.7/5', 3 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Reviews', '45,000+', 4 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Feature', 'Ventilated Cooling', 5 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Sizes', 'Twin to Cal King', 6 from products p where p.slug = 'memory-foam-mattress-topper';
-
-insert into product_specs (product_id, label, value, display_order)
-select p.id, 'Fill Type', 'Gel Memory Foam', 1 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Rating', '★★★★★ 4.8/5', 2 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Reviews', '50,000+', 3 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Best For', 'Side & Back Sleepers', 4 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Cover', 'Washable Bamboo Blend', 5 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Loft', 'Medium-High', 6 from products p where p.slug = 'cooling-gel-pillow';
-
--- ════════════════════════════════════════════════
--- SEED DATA — PRODUCT FEATURES
--- ════════════════════════════════════════════════
-insert into product_features (product_id, feature, display_order)
-select p.id, 'Ventilated gel layer keeps you cool', 1 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Adaptive memory foam for neck support', 2 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Hypoallergenic, washable cover', 3 from products p where p.slug = 'cooling-gel-pillow'
-union all
-select p.id, 'Holds shape — no flattening overnight', 4 from products p where p.slug = 'cooling-gel-pillow';
-
-insert into product_features (product_id, feature, display_order)
-select p.id, 'Hotel-quality 3-inch depth for full pressure relief', 1 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Ventilated channels prevent heat build-up', 2 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Excellent motion isolation for couples', 3 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Fits all standard mattress sizes', 4 from products p where p.slug = 'memory-foam-mattress-topper'
-union all
-select p.id, 'Machine washable cover included', 5 from products p where p.slug = 'memory-foam-mattress-topper';
 
 -- ════════════════════════════════════════════════
 -- SEED DATA — RELATED PRODUCTS
@@ -327,8 +261,6 @@ insert into site_settings (key, value, description) values
 -- ════════════════════════════════════════════════
 alter table categories enable row level security;
 alter table products enable row level security;
-alter table product_specs enable row level security;
-alter table product_features enable row level security;
 alter table related_products enable row level security;
 alter table site_settings enable row level security;
 alter table pinterest_pins enable row level security;
@@ -336,8 +268,6 @@ alter table pinterest_pins enable row level security;
 -- Public can read everything
 create policy "Public read categories" on categories for select using (true);
 create policy "Public read products" on products for select using (true);
-create policy "Public read product_specs" on product_specs for select using (true);
-create policy "Public read product_features" on product_features for select using (true);
 create policy "Public read related_products" on related_products for select using (true);
 create policy "Public read site_settings" on site_settings for select using (true);
 create policy "Public read pinterest_pins" on pinterest_pins for select using (true);
@@ -350,5 +280,3 @@ create index if not exists idx_products_category on products(category_id);
 create index if not exists idx_products_featured on products(is_featured) where is_featured = true;
 create index if not exists idx_categories_slug on categories(slug);
 create index if not exists idx_pins_date on pinterest_pins(post_date);
-create index if not exists idx_product_specs_product on product_specs(product_id);
-create index if not exists idx_product_features_product on product_features(product_id);

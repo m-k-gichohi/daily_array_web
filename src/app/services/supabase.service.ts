@@ -45,7 +45,7 @@ export class SupabaseService {
   async getFeaturedProducts(): Promise<Product[]> {
     const { data, error } = await this.supabase
       .from('products')
-      .select('*, category:categories(*), specs:product_specs(*), features:product_features(*)')
+      .select('*, category:categories(*)')
       .eq('is_featured', true)
       .eq('is_active', true)
       .order('display_order')
@@ -57,7 +57,7 @@ export class SupabaseService {
   async getProductsByCategory(categoryId: string): Promise<Product[]> {
     const { data, error } = await this.supabase
       .from('products')
-      .select('*, category:categories(*), specs:product_specs(*), features:product_features(*)')
+      .select('*, category:categories(*)')
       .eq('category_id', categoryId)
       .eq('is_active', true)
       .order('display_order');
@@ -68,7 +68,7 @@ export class SupabaseService {
   async getProductBySlug(slug: string): Promise<Product | null> {
     const { data } = await this.supabase
       .from('products')
-      .select('*, category:categories(*), specs:product_specs(*), features:product_features(*)')
+      .select('*, category:categories(*)')
       .eq('slug', slug)
       .eq('is_active', true)
       .single();

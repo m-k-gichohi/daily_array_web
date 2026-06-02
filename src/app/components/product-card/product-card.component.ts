@@ -36,12 +36,7 @@ import { CommonModule } from '@angular/common';
         <h5 class="tda-card-title mb-2">{{ product().name }}</h5>
         <p class="tda-card-tagline mb-3 grow">{{ product().tagline }}</p>
 
-        <div class="d-flex align-items-center justify-content-between mt-auto pt-2 tda-card-footer">
-          <span class="tda-card-price">\${{ product().price_approx }}</span>
-          <span class="tda-card-cta">
-            View on Amazon <i class="bi bi-arrow-right ms-1"></i>
-          </span>
-        </div>
+       
       </div>
 
     </a>
@@ -120,21 +115,7 @@ import { CommonModule } from '@angular/common';
       color: #888;
       line-height: 1.55;
     }
-    .tda-card-footer {
-      border-top: 1px solid #f0ead8;
-    }
-    .tda-card-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #b5832a;
-    }
-    .tda-card-cta {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #bbb;
-      transition: color 0.2s;
-    }
+
     .tda-product-card:hover .tda-card-cta { color: #b5832a; }
   `]
 })

@@ -84,11 +84,7 @@ import { SupabaseService } from '../../services/supabase.service';
               <h1 class="tda-display-title mb-3">{{ product()!.name }}</h1>
               <p class="tda-tagline mb-4">{{ product()!.tagline }}</p>
 
-              <!-- Price + CTA -->
-              <div class="tda-price-row d-flex align-items-baseline gap-3 mb-3">
-                <span class="tda-price">\${{ product()!.price_approx }}</span>
-                <span class="tda-price-note">approx. — verify on Amazon</span>
-              </div>
+          
 
               <a
                 [href]="product()!.amazon_url"
@@ -106,59 +102,12 @@ import { SupabaseService } from '../../services/supabase.service';
                 Affiliate link — we may earn a small commission at no extra cost to you.
               </p>
 
-              <!-- Features / At a Glance -->
-              @if (product()!.features && product()!.features!.length > 0) {
-                <div class="tda-features-card mb-4 p-3">
-                  <p class="tda-features-label mb-2">At a glance</p>
-                  <ul class="list-unstyled mb-0">
-                    @for (f of product()!.features; track f.id) {
-                      <li class="tda-feature-item mb-2">
-                        <i class="bi bi-dash text-warning me-2"></i>{{ f.feature }}
-                      </li>
-                    }
-                  </ul>
-                </div>
-              }
 
-              <!-- Specs Table -->
-              @if (product()!.specs && product()!.specs!.length > 0) {
-                <div class="table-responsive mb-4">
-                  <table class="table tda-specs-table mb-0">
-                    <tbody>
-                      @for (spec of product()!.specs; track spec.id) {
-                        <tr>
-                          <td class="tda-spec-label">{{ spec.label }}</td>
-                          <td class="tda-spec-value">{{ spec.value }}</td>
-                        </tr>
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              }
+          
 
            
 
-              <!-- Why we love it / Best for -->
-              @if (product()!.why_we_love_it || product()!.best_for) {
-                <div class="row g-2 mb-4">
-                  @if (product()!.why_we_love_it) {
-                    <div class="col-sm-6">
-                      <div class="tda-love-card p-3 h-100">
-                        <p class="tda-love-label mb-2">Why we love it</p>
-                        <p class="tda-body-text mb-0">{{ product()!.why_we_love_it }}</p>
-                      </div>
-                    </div>
-                  }
-                  @if (product()!.best_for) {
-                    <div class="col-sm-6">
-                      <div class="tda-love-card p-3 h-100">
-                        <p class="tda-love-label mb-2">Best for</p>
-                        <p class="tda-body-text mb-0">{{ product()!.best_for }}</p>
-                      </div>
-                    </div>
-                  }
-                </div>
-              }
+        
 
               <!-- Bottom CTA -->
               <div class="tda-bottom-cta pt-4">
