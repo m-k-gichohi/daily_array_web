@@ -54,8 +54,10 @@ import { SupabaseService } from '../../services/supabase.service';
         <div class="container">
           <div class="row g-5 align-items-start">
 
+          
+
             <!-- LEFT — IMAGE -->
-            <div class="col-lg-6">
+            <div class="col-lg-3">
               <div class="tda-product-img-wrap">
                 <img
                   [src]="product()!.image_url || 'assets/placeholder.jpg'"
@@ -68,38 +70,21 @@ import { SupabaseService } from '../../services/supabase.service';
                 }
               </div>
 
-                 <!-- Description -->
-              @if (product()!.description) {
-                <div class="mb-4 mt-10">
-                  <p class="tda-features-label mb-2">Why this one</p>
-                  <!-- <p class="tda-body-text">{{ product()!.description }}</p> -->
-                  <div [innerHtml]=product()!.description></div>
-                </div>
-              }
+                
             </div>
 
             <!-- RIGHT — DETAILS -->
-            <div class="col-lg-6">
+            <div class="col-lg-9">
               <p class="tda-eyebrow mb-2">{{ product()!.category?.name }}</p>
-              <h1 class="tda-display-title mb-3">{{ product()!.name }}</h1>
+              <h6 class="tda-display-title mb-3">{{ product()!.name }}</h6>
               <p class="tda-tagline mb-4">{{ product()!.tagline }}</p>
 
           
 
-              <a
-                [href]="product()!.amazon_url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn tda-btn-amazon d-inline-flex align-items-center gap-2 mb-2"
-                (click)="onAmazonClick()"
-              >
-                <i class="bi bi-bag-check"></i>
-                View on Amazon
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
+            
               <p class="tda-affiliate-note mb-4">
                 <i class="bi bi-info-circle me-1"></i>
-                Affiliate link — we may earn a small commission at no extra cost to you.
+                Affiliate link. We may earn a small commission at no extra cost to you.
               </p>
 
 
@@ -109,27 +94,20 @@ import { SupabaseService } from '../../services/supabase.service';
 
         
 
-              <!-- Bottom CTA -->
-              <div class="tda-bottom-cta pt-4">
-                <h3 class="tda-cta-title mb-2">Ready when you are.</h3>
-                <p class="tda-body-text mb-3">
-                  One tap takes you straight to Amazon to check today's price,
-                  available sizes, and thousands of verified reviews.
-                </p>
-                <a
-                  [href]="product()!.amazon_url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn tda-btn-amazon d-inline-flex align-items-center gap-2"
-                  (click)="onAmazonClick()"
-                >
-                  <i class="bi bi-bag-check"></i>
-                  Check price on Amazon
-                  <i class="bi bi-arrow-up-right"></i>
-                </a>
-              </div>
             </div>
           </div>
+
+                    <div class="row g-5 align-items-start pt-5">
+
+                     <!-- Description -->
+              @if (product()!.description) {
+                <div class="mb-4 mt-10">
+                  <p class="tda-features-label mb-2">Why this one</p>
+                  <!-- <p class="tda-body-text">{{ product()!.description }}</p> -->
+                  <div [innerHtml]=product()!.description></div>
+                </div>
+              }
+            </div>
         </div>
       </section>
 
@@ -211,7 +189,7 @@ import { SupabaseService } from '../../services/supabase.service';
     }
     .tda-display-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-size: clamp(1.75rem, 4vw, 1rem);
       font-weight: 400;
       color: #1a1a1a;
       line-height: 1.15;
