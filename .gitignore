@@ -43,3 +43,6 @@ __screenshots__/
 Thumbs.db
 src/environments/environment.development.ts
 .vscode
+product-page-style.css
+product-page-template.html
+your-blog-style-guide.txt
