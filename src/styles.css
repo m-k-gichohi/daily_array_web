@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 
    /* ─── Base ─────────────────────────────────────────── */
     :root {
@@ -372,3 +374,13 @@
       .final-cta-block { padding: 22px 16px; }
       .soft-cta-block  { padding: 16px; }
     }
+
+    .review-product-image{
+    border-radius:12px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:all .3s ease;
+}
+
+.review-product-image:hover{
+    transform:translateY(-4px);
+}
