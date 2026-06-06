@@ -44,5 +44,9 @@ Thumbs.db
 src/environments/environment.development.ts
 .vscode
 product-page-style.css
-product-page-template.html
+product-page-template-1.html
+product-page-template-2.html
+product-page-template-3.html
+product-page-template-4.html
+
 your-blog-style-guide.txt
