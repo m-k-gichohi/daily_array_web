@@ -1,17 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { MainHomeComponent } from '../main-home/main-home.component';
-import { NicheHomeComponent } from '../niche-home/niche-home.component';
-import { SubdomainService } from '../../services/subdomain.service';
 
 @Component({
   selector: 'app-home-router',
   standalone: true,
-  imports: [CommonModule, NgIf, MainHomeComponent, NicheHomeComponent],
+  imports: [CommonModule, MainHomeComponent],
   template: `
-    <ng-container *ngIf="hasSubdomain; else mainHome">
-      <app-niche-home />
-    </ng-container>
+   
 
     <ng-template #mainHome>
       <app-main-home />
@@ -19,7 +15,7 @@ import { SubdomainService } from '../../services/subdomain.service';
   `
 })
 export class HomeRouterComponent {
-  private subdomainService = inject(SubdomainService);
+  // private subdomainService = inject(SubdomainService);
 
-  hasSubdomain = this.subdomainService.hasSubdomain();
+  // hasSubdomain = this.subdomainService.hasSubdomain();
 }
