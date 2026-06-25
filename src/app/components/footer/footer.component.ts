@@ -63,6 +63,7 @@ import { RouterLink } from '@angular/router';
           <div class="row align-items-center py-3 g-2">
             <div class="col-md-6">
               <p class="mb-0 tda-footer-copy">© 2026 The Daily Array. All rights reserved.</p>
+              <small><a [routerLink]="['/privacy-policy']">Privacy Policy</a></small>
             </div>
             <div class="col-md-6 text-md-end">
               <p class="mb-0 tda-footer-disclaimer">

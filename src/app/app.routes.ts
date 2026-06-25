@@ -13,6 +13,11 @@ export const routes: Routes = [
     path: 'products/:slug',
     loadComponent: () => import('./pages/product/product.component').then(m => m.ProductComponent)
   },
+
+    {
+    path: 'privacy-policy',
+    loadComponent: () => import('./pages/privacy-policy/privacy-policy').then(m => m.PrivacyPolicyComponent)
+  },
   {
     path: '**',
     redirectTo: ''

@@ -9,7 +9,7 @@ export class SubdomainService {
     }
 
     const hostname = window.location.hostname;
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    if (hostname == 'localhost' || hostname == '127.0.0.1') {
       return environment.devSubdomain ?? null;
     }
 
