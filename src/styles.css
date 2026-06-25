@@ -864,3 +864,67 @@ h2.section-title {
   .t3-body { grid-template-columns: 1fr; }
   .t3-footer { flex-direction: column; text-align: center; }
 }
+
+/* Hero Section subdomain */
+
+.hero-bedroom-decor {
+    background:
+        linear-gradient(
+            135deg,
+            #f8f5f0 0%,
+            #ffffff 50%,
+            #f4f1eb 100%
+        );
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-bedroom-decor h1 {
+    line-height: 1.1;
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.floating-card,
+.floating-card-2 {
+    position: absolute;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.floating-card {
+    bottom: 40px;
+    left: -20px;
+}
+
+.floating-card-2 {
+    top: 40px;
+    right: -20px;
+}
+
+@media (max-width: 991px) {
+
+    .hero-image-wrapper img {
+        height: 450px;
+    }
+
+    .floating-card,
+    .floating-card-2 {
+        position: static;
+        margin-top: 15px;
+    }
+
+    .display-3 {
+        font-size: 2.8rem;
+    }
+}

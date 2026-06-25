@@ -7,6 +7,8 @@ export interface Category {
   hero_tagline: string;
   display_order: number;
   is_active: boolean;
+  subdomain:string,
+  hero_html:string,
 }
 
 

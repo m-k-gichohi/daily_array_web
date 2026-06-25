@@ -41,6 +41,17 @@ export class SupabaseService {
     return data ?? null;
   }
 
+    async getCategoryBySubdomain(subdomain: string): Promise<Category | null> {
+      console.log("dadadddadd",subdomain);
+    const { data } = await this.supabase
+      .from('categories')
+      .select('*')
+      .eq('subdomain', subdomain)
+      .eq('is_active', true)
+      .single();
+    return data ?? null;
+  }
+
   // ── PRODUCTS ──
   async getFeaturedProducts(): Promise<Product[]> {
     const { data, error } = await this.supabase

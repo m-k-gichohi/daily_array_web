@@ -1,0 +1,332 @@
+   /* ── LOADING ── */
+    .tda-niche-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+    }
+    .tda-niche-spinner {
+      width: 36px; height: 36px;
+      border: 2px solid #f0ead8;
+      border-top-color: #b5832a;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── 404 ── */
+    .tda-niche-404 {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .tda-niche-404-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    .tda-niche-404-sub {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    /* ── HERO ── */
+    .tda-niche-hero {
+      background: linear-gradient(135deg, #fdf8ef 0%, #f5ede0 60%, #eeddc8 100%);
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    .tda-niche-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b5832a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Custom HTML hero wrapper */
+    .tda-niche-hero-custom {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    /* Fallback hero */
+    .tda-niche-hero-fallback {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    /* ── SHARED TYPOGRAPHY ── */
+    .tda-niche-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #b5832a;
+    }
+    .tda-niche-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+    }
+    .tda-niche-hero-title em { font-style: italic; color: #b5832a; }
+    .tda-niche-hero-sub {
+      font-size: 1.0625rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.75;
+      max-width: 520px;
+    }
+    .tda-niche-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+
+    /* ── BUTTONS ── */
+    .tda-niche-btn-primary {
+      display: inline-block;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .tda-niche-btn-primary:hover {
+      background: #b5832a;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* ── TRUST BAR ── */
+    .tda-niche-trust {
+      background: #1a1a2e;
+      padding: 1.5rem 0;
+    }
+    .tda-niche-trust-icon { color: #c9a84c; font-size: 0.875rem; }
+    .tda-niche-trust-text { font-size: 0.8125rem; color: #a0a8b8; }
+
+    /* ── PRODUCTS SECTION ── */
+    .tda-niche-products {
+      background: #faf7f0;
+      padding: 5rem 0 6rem;
+    }
+    .tda-niche-products-header { }
+
+    /* ── PRODUCT CARD ── */
+    .tda-niche-product-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #f0ead8;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+      transition: transform 0.25s cubic-bezier(.25,.46,.45,.94),
+                  box-shadow 0.25s cubic-bezier(.25,.46,.45,.94),
+                  border-color 0.25s;
+    }
+    .tda-niche-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+      border-color: #d4c5a9;
+    }
+    .tda-niche-card-img-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #f8f5ef;
+    }
+    .tda-niche-card-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+    }
+    .tda-niche-product-card:hover .tda-niche-card-img { transform: scale(1.05); }
+    .tda-niche-card-badge {
+      position: absolute;
+      top: 10px; left: 10px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: #b5832a;
+      color: #fff;
+      padding: 3px 8px;
+    }
+    .tda-niche-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .tda-niche-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .tda-niche-card-tagline {
+      font-size: 0.8125rem;
+      color: #888;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .tda-niche-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.875rem;
+      border-top: 1px solid #f0ead8;
+      margin-top: auto;
+    }
+    .tda-niche-card-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #b5832a;
+    }
+    .tda-niche-card-cta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+    .tda-niche-product-card:hover .tda-niche-card-cta { color: #b5832a; }
+
+    /* ── EMPTY ── */
+    .tda-niche-empty { text-align: center; padding: 4rem 0; }
+
+    /* ── SKELETON ── */
+    .tda-niche-skeleton {
+      background: linear-gradient(90deg, #f0ead8 25%, #f8f5ef 50%, #f0ead8 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 4px;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* ── FOOTER ── */
+    .tda-niche-footer {
+      background: #1a1a2e;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .tda-niche-footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #f5f0e8;
+      text-decoration: none;
+    }
+    .tda-niche-footer-brand span { color: #c9a84c; }
+    .tda-niche-footer-disclaimer {
+      font-size: 0.75rem;
+      color: #a0a8b8;
+      opacity: 0.6;
+      line-height: 1.5;
+    }
+
+    /* ── CUSTOM HTML HERO STYLES ──
+       These classes are available for use inside hero_html field.
+       Design your hero using any of these. */
+    :host ::ng-deep .tda-niche-hero-custom .niche-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #b5832a;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    :host ::ng-deep .tda-niche-hero-custom h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 1.5rem;
+    }
+    :host ::ng-deep .tda-niche-hero-custom h1 em { font-style: italic; color: #b5832a; }
+    :host ::ng-deep .tda-niche-hero-custom .niche-sub {
+      font-size: 1.0625rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-stat-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #b5832a;
+      line-height: 1;
+      display: block;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-stat-label {
+      font-size: 0.75rem;
+      color: #888;
+      display: block;
+      margin-top: 4px;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-btn {
+      display: inline-block;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-btn:hover { background: #b5832a; color: #fff; }
+    :host ::ng-deep .tda-niche-hero-custom .niche-btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #1a1a1a;
+      border: 1.5px solid #1a1a1a;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    :host ::ng-deep .tda-niche-hero-custom .niche-btn-outline:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
