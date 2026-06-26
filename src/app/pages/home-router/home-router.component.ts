@@ -9,9 +9,9 @@ import { MainHomeComponent } from '../main-home/main-home.component';
   template: `
    
 
-    <ng-template #mainHome>
+    <!-- <ng-template #mainHome> -->
       <app-main-home />
-    </ng-template>
+    <!-- </ng-template> -->
   `
 })
 export class HomeRouterComponent {
